@@ -7,7 +7,7 @@ import requests
 # 3. create project
 # 4. add dependencies for this project (for example snapshot dependency)
 
-# eyJ0eXAiOiAiVENWMiJ9.cGNiQ0JqSmVLMHhqNzBjaTZNOUhEMHlBWDRZ.MGRjNmJjYmMtZGE2OC00NDgwLThlMWEtMDMyZjEyZjYyYTAw
+eyJ0eXAiOiAiVENWMiJ9.cGNiQ0JqSmVLMHhqNzBjaTZNOUhEMHlBWDRZ.MGRjNmJjYmMtZGE2OC00NDgwLThlMWEtMDMyZjEyZjYyYTAw
 
 # Authorization part
 auth_token = input('Please provide your auth token: ')
