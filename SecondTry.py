@@ -7,7 +7,6 @@ import requests
 # 3. create project
 # 4. add dependencies for this project (for example snapshot dependency)
 
-eyJ0eXAiOiAiVENWMiJ9.cGNiQ0JqSmVLMHhqNzBjaTZNOUhEMHlBWDRZ.MGRjNmJjYmMtZGE2OC00NDgwLThlMWEtMDMyZjEyZjYyYTAw
 
 # Authorization part
 auth_token = input('Please provide your auth token: ')
@@ -48,9 +47,23 @@ def createProject():
 # Here we are requesting project name and then send post request in order to create project
 # that would be great to create a check whether such project already exsists or not
     print(response)
+    return projectname
 
 
 
+
+def createvcs()
+    hed2 = {'Authorization': 'Bearer ' + auth_token,
+            'Content-Type': 'application/xml',
+            'Origin': 'http://{}'.format(myurl),
+            'Accept': 'application/json'}
+    url = " http://{}/app/rest/latest/vcs-roots".format(myurl)
+    vcsrootname = input("Name your VCS root: ")
+    dat = "<vcsRoots href='/httpAuth/app/rest/vcs-roots?locator=project:(id:{})'/>".format(createProject())
+    response = requests.post(url, data=dat, headers=hed2)
+    if response.status_code != 200:
+        print("Achtung!")
+    else:
 
 if __name__ == '__main__':
     connect()
