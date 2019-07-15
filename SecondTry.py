@@ -18,11 +18,7 @@ def connect():
             'Content-Type': 'xml/application',
             'Origin': 'http://{}'.format(myurl),
             'Accept': 'application/json'}
-    # hed = {'Authorization': 'Bearer ' + auth_token}
     url = ('http://{}/app/rest/latest/projects'.format(myurl))
-# response = requests.get(url, data=raw_data, headers=hed)
-#     response = requests.get(url, headers=hed)
-#     session.verify = False
     print(url)
     print(auth)
     response = requests.get(url=url, headers=auth)
@@ -38,7 +34,6 @@ def createProject():
     url = " http://{}/app/rest/latest/projects".format(myurl)
     projectname = input("Name your project: ")
     dat = "<newProjectDescription name='{}'></newProjectDescription>".format(projectname)
-    # "<newProjectDescription name='test3Consoleeee' ></newProjectDescription>"
     response = requests.post(url, data=dat, headers=hed2)
     if response.status_code != 200:
         print("Achtung!")
@@ -51,6 +46,10 @@ def createProject():
 
 
 
+
+## Next goals:
+# 1. Create VCS
+#2. Map it to project with properties assigned.
 
 def createvcs()
     hed2 = {'Authorization': 'Bearer ' + auth_token,
