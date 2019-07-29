@@ -1,0 +1,29 @@
+{
+    "id": "TestSWAG12",
+    "name": "TestSWAG12",
+    "vcsName": "jetbrains.git",
+    "project": {
+        "id": "TestJson",
+        "name": "TestJson"
+    },
+    "properties": {
+        "count": 3,
+        "property": [
+            {
+                "name": "branch",
+                "value": "master"
+            },
+            {
+                "name": "teamcity:branchSpec",
+                "value": "%project.branch.spec%"
+            },
+            {
+                "name": "url",
+                "value": "https://github.com/JetBrains/teamcity-rest-client"
+            }
+        ]
+    },
+    "vcsRootInstances": {
+        "href": "/app/rest/vcs-root-instances?locator=vcsRoot:(id:TestSWAG1)"
+    }
+}

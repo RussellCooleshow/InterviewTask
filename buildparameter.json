@@ -1,0 +1,5 @@
+{
+  "inherited" : true,
+  "name" : "project.branch.spec",
+  "value" : "+:refs/heads/*"
+}
