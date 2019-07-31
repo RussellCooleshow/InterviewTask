@@ -20,6 +20,7 @@ vcsrootname = input("Name your VCS root: ")
 vcsid = input("Enter your VCSID: ")
 
 
+## It was done just for sanity Connection Check on early stages.
 def connect():
     auth = {'Authorization': 'Bearer ' + auth_token,
             'Content-Type': 'xml/application',
@@ -31,6 +32,8 @@ def connect():
     response = requests.get(url=url, headers=auth)
     print(response)
 
+
+# The whole Create project thing
 
 def createProject():
     hed2 = {'Authorization': 'Bearer ' + auth_token,
@@ -108,6 +111,8 @@ def definingBuilds():
     buildA = 'buildA.json'
     buildAname = input("Give your build A a name: ")
     with open(buildA, 'r') as f:
+
+#This is a block is repeats in almost every build and it must be beautified, but for now - it works.
         dataa = json.load(f)
         dataa['id'] = buildAname
         dataa['name'] = buildAname
@@ -143,6 +148,17 @@ def definingBuilds():
         datab = json.load(f)
         datab['id'] = buildBname
         datab['name'] = buildBname
+        datab['projectName'] = projectname
+        datab['projectId'] = projectname
+        datab['project']['id'] = projectname
+        datab['project']['name'] = projectname
+        datab['project']['href'] = "/app/rest/projects/id:{}".format(projectname)
+        datab['project']['webUrl'] = "http://myteamcityserver.com:8111/project.html?projectId={}".format(projectname)
+        datab['parameters']['href'] = "/app/rest/buildTypes/id:{}/parameters".format(buildBname)
+        datab['builds']['href'] = "/app/rest/buildTypes/id:{}/builds/".format(buildBname)
+        datab['investigations']['href'] = "/app/rest/investigations?locator=buildType:(id:{})".format(buildBname)
+        datab['compatibleAgents']['href'] = "/app/rest/agents?locator=compatible:(buildType:(id:{}))".format(buildBname)
+
     response = requests.post(url, json=datab, headers=hed2)
     if response.status_code != 200:
         print("Achtung!")
@@ -161,6 +177,18 @@ def definingBuilds():
         datac = json.load(f)
         datac['id'] = buildCname
         datac['name'] = buildCname
+        datac['projectName'] = projectname
+        datac['projectId'] = projectname
+        datac['project']['id'] = projectname
+        datac['project']['name'] = projectname
+        datac['project']['href'] = "/app/rest/projects/id:{}".format(projectname)
+        datac['project']['webUrl'] = "http://myteamcityserver.com:8111/project.html?projectId={}".format(projectname)
+        datac['parameters']['href'] = "/app/rest/buildTypes/id:{}/parameters".format(buildCname)
+        datac['builds']['href'] = "/app/rest/buildTypes/id:{}/builds/".format(buildCname)
+        datac['investigations']['href'] = "/app/rest/investigations?locator=buildType:(id:{})".format(buildCname)
+        datac['compatibleAgents']['href'] = "/app/rest/agents?locator=compatible:(buildType:(id:{}))".format(buildCname)
+
+# Above we can see regular definition of a build according to your Project and VCS name setup. Lower - we setup snapshot dependency.
         datac["snapshot-dependencies"]["snapshot-dependency"][0]["id"] = buildAname
         datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['id'] = buildAname
         datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['name'] = buildAname
@@ -173,8 +201,6 @@ def definingBuilds():
         datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['projectName'] = projectname
         datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['projectId'] = projectname
         datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['href'] = "/app/rest/buildTypes/id:{}".format(buildAname)
-
-
 
     response = requests.post(url, json=datac, headers=hed2)
     if response.status_code != 200:
