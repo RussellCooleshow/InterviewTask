@@ -12,11 +12,13 @@ import json
 
 #
 
-
 # Authorization part
 auth_token = input('Please provide your auth token: ')
 myurl = input('Please provide your TeamCity Server address and port: ')
 projectname = input("Name your project: ")
+vcsrootname = input("Name your VCS root: ")
+vcsid = input("Enter your VCSID: ")
+
 
 def connect():
     auth = {'Authorization': 'Bearer ' + auth_token,
@@ -28,7 +30,6 @@ def connect():
     print(auth)
     response = requests.get(url=url, headers=auth)
     print(response)
-
 
 
 def createProject():
@@ -53,7 +54,8 @@ def createProject():
     print(response)
     return projectname
 
-#here I built separate function in order to assign build parameter to newly created project
+# Here I built separate function in order to assign build parameter to newly created project
+
 def buildparameter():
     hed2 = {'Authorization': 'Bearer ' + auth_token,
             'Content-Type': 'application/json',
@@ -65,11 +67,9 @@ def buildparameter():
     if response.status_code != 200:
         print("Achtung!")
     else:
-        print("Your build parameter has been succesfully defined in " + projectname)
+        print("Your build parameter has been successfully defined in " + projectname)
 
-
-
-
+# Here we are creating VCS Root with desired name and https://github.com/JetBrains/teamcity-rest-client
 
 def createvcs():
     hed2 = {'Authorization': 'Bearer ' + auth_token,
@@ -77,8 +77,6 @@ def createvcs():
             'Origin': 'http://{}'.format(myurl),
             'Accept': 'application/json'}
     url = " http://{}/app/rest/latest/vcs-roots".format(myurl)
-    vcsrootname = input("Name your VCS root: ")
-    vcsid = input("Enter your VCSID: ")
     filename = 'vcsroot.json'
     with open(filename, 'r') as f:
         data = json.load(f)
@@ -92,11 +90,101 @@ def createvcs():
     if response.status_code != 200:
         print("Achtung!")
     else:
-        print("Your VCS Root {} has been created succesfully".format(vcsrootname))
+        print("Your VCS Root {} has been created successfully".format(vcsrootname))
 
+    return vcsid, vcsrootname
+
+def definingBuilds():
+    hed2 = {'Authorization': 'Bearer ' + auth_token,
+            'Content-Type': 'application/json',
+            'Origin': 'http://{}'.format(myurl),
+            'Accept': 'application/json'}
+    url = " http://{}/app/rest/buildTypes".format(myurl, projectname)
+
+
+## Here we are creating build A which has:
+# -A has the VCS Root attached, has no build step and publishes “README.md” as an artifact
+
+    buildA = 'buildA.json'
+    buildAname = input("Give your build A a name: ")
+    with open(buildA, 'r') as f:
+        dataa = json.load(f)
+        dataa['id'] = buildAname
+        dataa['name'] = buildAname
+        dataa['projectName'] = projectname
+        dataa['projectId'] = projectname
+        dataa['project']['id'] = projectname
+        dataa['project']['name'] = projectname
+        dataa['project']['href'] = "/app/rest/projects/id:{}".format(projectname)
+        dataa['project']['webUrl'] = "http://myteamcityserver.com:8111/project.html?projectId={}".format(projectname)
+        dataa['vcs-root-entries']['vcs-root-entry'][0]['id'] = vcsid
+        dataa['vcs-root-entries']['vcs-root-entry'][0]['vcs-root']['id'] = vcsid
+        dataa['vcs-root-entries']['vcs-root-entry'][0]['vcs-root']['name'] = vcsrootname
+        dataa['vcs-root-entries']['vcs-root-entry'][0]['vcs-root']['href'] = "/app/rest/vcs-roots/id:{}".format(vcsid)
+        dataa['parameters']['href'] = "/app/rest/buildTypes/id:{}/parameters".format(buildAname)
+        dataa['builds']['href'] = "/app/rest/buildTypes/id:{}/builds/".format(buildAname)
+        dataa['investigations']['href'] = "/app/rest/investigations?locator=buildType:(id:{})".format(buildAname)
+        dataa['compatibleAgents']['href'] = "/app/rest/agents?locator=compatible:(buildType:(id:{}))".format(buildAname)
+    response = requests.post(url, json=dataa, headers=hed2)
+    if response.status_code != 200:
+        print("Achtung!")
+    else:
+        print("Your Build {} has been created successfully".format(buildAname))
+
+
+## Here we are creating Build B which:
+# -  has a command line step that generates a delay in the chain by using sleep 10
+# -  has an agent requirement, where “teamcity.agent.name” equals “Default Agent”
+
+    buildB = 'buildB.json'
+    buildBname = input("Give your build B a name: ")
+
+    with open(buildB, 'r') as f:
+        datab = json.load(f)
+        datab['id'] = buildBname
+        datab['name'] = buildBname
+    response = requests.post(url, json=datab, headers=hed2)
+    if response.status_code != 200:
+        print("Achtung!")
+    else:
+        print("Your Build {} has been created successfully".format(buildBname))
+
+## Here we are creating Build C which:
+# -  has a snapshot dependency on both A and B, and an artifact dependency “from the same chain” on A
+# -  has a build trigger on changes in snapshot dependencies on the VCS Root, only on branch “master”
+
+
+    buildC = 'buildC.json'
+    buildCname = input("Give your build C a name: ")
+
+    with open(buildC, 'r') as f:
+        datac = json.load(f)
+        datac['id'] = buildCname
+        datac['name'] = buildCname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["id"] = buildAname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['id'] = buildAname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['name'] = buildAname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['projectName'] = projectname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['projectId'] = projectname
+        datac["snapshot-dependencies"]["snapshot-dependency"][0]["source-buildType"]['href'] = "/app/rest/buildTypes/id:{}".format(buildAname)
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["id"] = buildBname
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['id'] = buildBname
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['name'] = buildBname
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['projectName'] = projectname
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['projectId'] = projectname
+        datac["snapshot-dependencies"]["snapshot-dependency"][1]["source-buildType"]['href'] = "/app/rest/buildTypes/id:{}".format(buildAname)
+
+
+
+    response = requests.post(url, json=datac, headers=hed2)
+    if response.status_code != 200:
+        print("Achtung!")
+    else:
+        print("Your Build {} has been created successfully".format(buildCname))
 
 if __name__ == '__main__':
     connect()
     createProject()
     buildparameter()
     createvcs()
+    definingBuilds()

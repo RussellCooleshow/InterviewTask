@@ -1,0 +1,212 @@
+{
+    "id": "holasenior_C",
+    "name": "C",
+    "projectName": "holasenior",
+    "projectId": "holasenior",
+    "href": "/app/rest/buildTypes/id:holasenior_C",
+    "webUrl": "http://myteamcityserver.com:8111/viewType.html?buildTypeId=holasenior_C",
+    "project": {
+        "id": "holasenior",
+        "name": "holasenior",
+        "parentProjectId": "_Root",
+        "href": "/app/rest/projects/id:holasenior",
+        "webUrl": "http://myteamcityserver.com:8111/project.html?projectId=holasenior"
+    },
+    "templates": {
+        "count": 0,
+        "buildType": []
+    },
+    "vcs-root-entries": {
+        "count": 0,
+        "vcs-root-entry": []
+    },
+    "settings": {
+        "count": 1,
+        "property": [
+            {
+                "name": "buildNumberCounter",
+                "value": "1"
+            }
+        ]
+    },
+    "parameters": {
+        "count": 1,
+        "href": "/app/rest/buildTypes/id:holasenior_C/parameters",
+        "property": [
+            {
+                "name": "project.branch.spec",
+                "value": "+:refs/heads/*",
+                "inherited": true
+            }
+        ]
+    },
+    "steps": {
+        "count": 0
+    },
+    "features": {
+        "count": 0
+    },
+    "triggers": {
+        "count": 1,
+        "trigger": [
+            {
+                "id": "vcsTrigger",
+                "type": "vcsTrigger",
+                "properties": {
+                    "count": 3,
+                    "property": [
+                        {
+                            "name": "enableQueueOptimization",
+                            "value": "true"
+                        },
+                        {
+                            "name": "quietPeriodMode",
+                            "value": "DO_NOT_USE"
+                        },
+                        {
+                            "name": "watchChangesInDependencies",
+                            "value": "true"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "snapshot-dependencies": {
+        "count": 2,
+        "snapshot-dependency": [
+            {
+                "id": "holasenior_A",
+                "type": "snapshot_dependency",
+                "properties": {
+                    "count": 6,
+                    "property": [
+                        {
+                            "name": "run-build-if-dependency-failed",
+                            "value": "RUN_ADD_PROBLEM"
+                        },
+                        {
+                            "name": "run-build-if-dependency-failed-to-start",
+                            "value": "MAKE_FAILED_TO_START"
+                        },
+                        {
+                            "name": "run-build-on-the-same-agent",
+                            "value": "false"
+                        },
+                        {
+                            "name": "sync-revisions",
+                            "value": "true"
+                        },
+                        {
+                            "name": "take-started-build-with-same-revisions",
+                            "value": "true"
+                        },
+                        {
+                            "name": "take-successful-builds-only",
+                            "value": "true"
+                        }
+                    ]
+                },
+                "source-buildType": {
+                    "id": "holasenior_A",
+                    "name": "A",
+                    "projectName": "holasenior",
+                    "projectId": "holasenior",
+                    "href": "/app/rest/buildTypes/id:holasenior_A",
+                    "webUrl": "http://myteamcityserver.com:8111/viewType.html?buildTypeId=holasenior_A"
+                }
+            },
+            {
+                "id": "holasenior_B",
+                "type": "snapshot_dependency",
+                "properties": {
+                    "count": 6,
+                    "property": [
+                        {
+                            "name": "run-build-if-dependency-failed",
+                            "value": "RUN_ADD_PROBLEM"
+                        },
+                        {
+                            "name": "run-build-if-dependency-failed-to-start",
+                            "value": "MAKE_FAILED_TO_START"
+                        },
+                        {
+                            "name": "run-build-on-the-same-agent",
+                            "value": "false"
+                        },
+                        {
+                            "name": "sync-revisions",
+                            "value": "true"
+                        },
+                        {
+                            "name": "take-started-build-with-same-revisions",
+                            "value": "true"
+                        },
+                        {
+                            "name": "take-successful-builds-only",
+                            "value": "true"
+                        }
+                    ]
+                },
+                "source-buildType": {
+                    "id": "holasenior_B",
+                    "name": "B",
+                    "projectName": "holasenior",
+                    "projectId": "holasenior",
+                    "href": "/app/rest/buildTypes/id:holasenior_B",
+                    "webUrl": "http://myteamcityserver.com:8111/viewType.html?buildTypeId=holasenior_B"
+                }
+            }
+        ]
+    },
+    "artifact-dependencies": {
+        "count": 1,
+        "artifact-dependency": [
+            {
+                "id": "ARTIFACT_DEPENDENCY_1",
+                "type": "artifact_dependency",
+                "properties": {
+                    "count": 4,
+                    "property": [
+                        {
+                            "name": "cleanDestinationDirectory",
+                            "value": "false"
+                        },
+                        {
+                            "name": "pathRules",
+                            "value": "README.md"
+                        },
+                        {
+                            "name": "revisionName",
+                            "value": "sameChainOrLastFinished"
+                        },
+                        {
+                            "name": "revisionValue",
+                            "value": "latest.sameChainOrLastFinished"
+                        }
+                    ]
+                },
+                "source-buildType": {
+                    "id": "holasenior_A",
+                    "name": "A",
+                    "projectName": "holasenior",
+                    "projectId": "holasenior",
+                    "href": "/app/rest/buildTypes/id:holasenior_A",
+                    "webUrl": "http://myteamcityserver.com:8111/viewType.html?buildTypeId=holasenior_A"
+                }
+            }
+        ]
+    },
+    "agent-requirements": {
+        "count": 0
+    },
+    "builds": {
+        "href": "/app/rest/buildTypes/id:holasenior_C/builds/"
+    },
+    "investigations": {
+        "href": "/app/rest/investigations?locator=buildType:(id:holasenior_C)"
+    },
+    "compatibleAgents": {
+        "href": "/app/rest/agents?locator=compatible:(buildType:(id:holasenior_C))"
+    }
+}

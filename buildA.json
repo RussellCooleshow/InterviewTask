@@ -1,0 +1,84 @@
+{
+    "id": "test",
+    "name": "test",
+    "projectName": "projectname",
+    "projectId": "projectname",
+    "href": "/app/rest/buildTypes/id:holasenior_A",
+    "webUrl": "http://myteamcityserver.com:8111/viewType.html?buildTypeId=holasenior_A",
+    "project": {
+        "id": "holasenior",
+        "name": "holasenior",
+        "parentProjectId": "_Root",
+        "href": "/app/rest/projects/id:holasenior",
+        "webUrl": "http://myteamcityserver.com:8111/project.html?projectId=holasenior"
+    },
+    "templates": {
+        "count": 0,
+        "buildType": []
+    },
+    "vcs-root-entries": {
+        "count": 1,
+        "vcs-root-entry": [
+            {
+                "id": "hehe",
+                "vcs-root": {
+                    "id": "hehe",
+                    "name": "doladola",
+                    "href": "/app/rest/vcs-roots/id:hehe"
+                },
+                "checkout-rules": ""
+            }
+        ]
+    },
+    "settings": {
+        "count": 2,
+        "property": [
+            {
+                "name": "artifactRules",
+                "value": "README.md"
+            },
+            {
+                "name": "buildNumberCounter",
+                "value": "1"
+            }
+        ]
+    },
+    "parameters": {
+        "count": 1,
+        "href": "/app/rest/buildTypes/id:holasenior_A/parameters",
+        "property": [
+            {
+                "name": "project.branch.spec",
+                "value": "+:refs/heads/*",
+                "inherited": true
+            }
+        ]
+    },
+    "steps": {
+        "count": 0
+    },
+    "features": {
+        "count": 0
+    },
+    "triggers": {
+        "count": 0
+    },
+    "snapshot-dependencies": {
+        "count": 0
+    },
+    "artifact-dependencies": {
+        "count": 0
+    },
+    "agent-requirements": {
+        "count": 0
+    },
+    "builds": {
+        "href": "/app/rest/buildTypes/id:holasenior_A/builds/"
+    },
+    "investigations": {
+        "href": "/app/rest/investigations?locator=buildType:(id:holasenior_A)"
+    },
+    "compatibleAgents": {
+        "href": "/app/rest/agents?locator=compatible:(buildType:(id:holasenior_A))"
+    }
+}

@@ -24,8 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac3a8d61-5270-4688-8e19-864c66a7000c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SecondTry.py" beforeDir="false" afterPath="$PROJECT_DIR$/SecondTry.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vcsroot.json" beforeDir="false" afterPath="$PROJECT_DIR$/vcsroot.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SecondTry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="906">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="365">
+              <caret line="171" column="101" selection-start-line="171" selection-start-column="101" selection-end-line="171" selection-end-column="101" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -48,28 +48,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/buildparameter.json">
+        <entry file="file://$PROJECT_DIR$/BuildC.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            <state relative-caret-position="-326">
+              <caret line="114" column="29" lean-forward="true" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vcsroot.json">
+        <entry file="file://$PROJECT_DIR$/buildB.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createproject.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="1680">
+              <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -77,11 +68,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Secondtry2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="106" />
+            <state relative-caret-position="406">
+              <caret line="210" column="14" lean-forward="true" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
               <folding>
-                <element signature="e#2326#2337#0" expanded="true" />
+                <element signature="e#5870#5881#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/buildA.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1215">
+              <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vcsroot.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -115,15 +124,19 @@
         <option value="$PROJECT_DIR$/vcsroot.xml" />
         <option value="$PROJECT_DIR$/createproject.json" />
         <option value="$PROJECT_DIR$/Teamcity.yaml" />
-        <option value="$PROJECT_DIR$/vcsroot.json" />
-        <option value="$PROJECT_DIR$/Secondtry2.py" />
         <option value="$PROJECT_DIR$/buildparameter.json" />
+        <option value="$PROJECT_DIR$/vcsroot.json" />
+        <option value="$PROJECT_DIR$/buildA.json" />
+        <option value="$PROJECT_DIR$/buildB.json" />
+        <option value="$PROJECT_DIR$/BuildC.json" />
+        <option value="$PROJECT_DIR$/Secondtry2.py" />
         <option value="$PROJECT_DIR$/SecondTry.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="27" />
+    <option name="x" value="25" />
+    <option name="y" value="40" />
     <option name="width" value="1425" />
     <option name="height" value="783" />
   </component>
@@ -330,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563205131994</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Create project, VCS root, define build parameters - done">
+      <created>1564428404170</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564428404170</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -343,15 +363,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1425" height="783" extended-state="0" />
+    <frame x="25" y="40" width="1425" height="783" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18019943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18019943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="TeamCity" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49886104" visible="true" weight="0.27206945" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49886104" visible="true" weight="0.27206945" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39942113" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -369,7 +390,8 @@
     <MESSAGE value="Fixed authentication" />
     <MESSAGE value="Started to work on VCS-root part" />
     <MESSAGE value="Started to work on VCS-root part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started to work on VCS-root part 2" />
+    <MESSAGE value="Create project, VCS root, define build parameters - done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create project, VCS root, define build parameters - done" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/xml.py" />
@@ -383,6 +405,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vcsroot.yaml" />
+    <entry file="file://$PROJECT_DIR$/Teamcity.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6903">
+          <caret line="21550" column="1" selection-start-line="21550" selection-start-column="1" selection-end-line="21550" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vcsroot.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -390,10 +419,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Teamcity.yaml">
+    <entry file="file://$PROJECT_DIR$/buildparameter.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6903">
-          <caret line="21550" column="1" selection-start-line="21550" selection-start-column="1" selection-end-line="21550" selection-end-column="1" />
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -406,32 +435,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vcsroot.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/buildparameter.json">
+    <entry file="file://$PROJECT_DIR$/buildA.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="1215">
+          <caret line="81" column="17" lean-forward="true" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Secondtry2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="106" />
+        <state relative-caret-position="406">
+          <caret line="210" column="14" lean-forward="true" selection-start-line="210" selection-start-column="14" selection-end-line="210" selection-end-column="14" />
           <folding>
-            <element signature="e#2326#2337#0" expanded="true" />
+            <element signature="e#5870#5881#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuildC.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-326">
+          <caret line="114" column="29" lean-forward="true" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildB.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="112" column="1" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SecondTry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="906">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="365">
+          <caret line="171" column="101" selection-start-line="171" selection-start-column="101" selection-end-line="171" selection-end-column="101" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

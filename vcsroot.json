@@ -1,6 +1,6 @@
 {
-    "id": "TestSWAG12",
-    "name": "TestSWAG12",
+    "id": "Test",
+    "name": "Test",
     "vcsName": "jetbrains.git",
     "project": {
         "id": "TestJson",
