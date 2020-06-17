@@ -93,7 +93,7 @@ def createvcs():
     if response.status_code != 200:
         print("Achtung!")
     else:
-        print("Your VCS Root {} has been created successfully".format(vcsrootname))
+        print("Your VCS Root {} has been created successfully and edited here".format(vcsrootname))
 
     return vcsid, vcsrootname
 
