@@ -7,7 +7,7 @@ import json
 # 1. To ask for a project name
 # # 2. to ask for vcs id and name in order to create it
 # # 3. defines the “project.branch.spec” build parameter with the value “+:refs/heads/*”
-# # # ALL THAT HAS BEEN ACHIEVED
+# # # ALL THAT HAS BEEN ACHIEVED (test edit)
 # TO DO LIST IS:
 
 #
